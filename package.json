@@ -1,0 +1,28 @@
+{
+  "maintainers": [ 
+    {
+      "name": "Enrico Marino",
+      "email": "enrico.marino@email.com"
+    },
+    {
+      "name": "Federico Spini",
+      "email": "federico.spini@gmail.com"
+    }
+  ],
+  "name": "plasm",
+  "description": "JavaScript Programming LAnguage for Solid Modeling",
+  "version": "0.2.0",
+  "homepage": "https://github.com/cvdlab/plasm",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cvdlab/plasm.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "simplexn": ">=0.2.0"
+  },
+  "devDependencies": {}
+}
