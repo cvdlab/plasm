@@ -1,0 +1,16 @@
+{
+  "name": "plasm",
+  "repo": "cvdlab/plasm",
+  "description": "JavaScript Programming Language for Solid Modeling",
+  "version": "0.0.1",
+  "keywords": [
+    "solid modeling",
+    "3d",
+    "webgl"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "dependencies": {},
+  "license": "MIT"
+}
