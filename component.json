@@ -2,9 +2,9 @@
   "name": "plasm",
   "repo": "cvdlab/plasm",
   "description": "JavaScript Programming Language for Solid Modeling",
-  "version": "0.0.1",
+  "version": "0.3.0",
   "keywords": [
-    "solid modeling",
+    "solid-modeling",
     "3d",
     "webgl"
   ],
@@ -13,7 +13,9 @@
   ],
   "dependencies": {
     "cvdlab/simplexn": "*",
-    "cvdlab/three": "*"
+    "cvdlab/three": "*",
+    "cvdlab/three-detector": "*",
+    "cvdlab/three-stats": "*"
   },
   "license": "MIT"
 }

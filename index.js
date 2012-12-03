@@ -10,7 +10,8 @@
  */
 
 var THREE = require('three');
-var Detector = require('detector');
+var detector = require('three-detector');
+var Stats = require('three-stats');
 var simplexn = require('simplexn');
 
 var toString = {}.toString;
@@ -68,7 +69,7 @@ var Plasm = plasm.Viewer = function (container, inspector) {
   var axes = this.axes();
   axes.draw();
 
-  var engine = Detector.webgl ? THREE.WebGLRenderer : THREE.CanvasRenderer;
+  var engine = detector.webgl ? THREE.WebGLRenderer : THREE.CanvasRenderer;
   var renderer = this.renderer = new engine({ antialias: true });
   renderer.setClearColorHex(0xefefef, 1);
   resize();
@@ -329,7 +330,7 @@ plasm.materials.LineMaterial = function () {
 plasm.materials.MeshMaterial = function () {
   return new THREE.MeshLambertMaterial({
       color: 0xD7D7D7
-    , wireframe: Detector !== undefined ? !Detector.webgl : false
+    , wireframe: detector !== undefined ? !detector.webgl : false
     , shading: THREE.FlatShading
     , vertexColors: THREE.FaceColors
   });
