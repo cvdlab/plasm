@@ -22,7 +22,9 @@
     "node": "*"
   },
   "dependencies": {
-    "simplexn": ">=0.2.0"
+    "simplexn": "*"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "component": "*"
+  }
 }
