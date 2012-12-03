@@ -11,6 +11,9 @@
   "scripts": [
     "index.js"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "cvdlab/simplexn": "*",
+    "cvdlab/three": "*"
+  },
   "license": "MIT"
 }

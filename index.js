@@ -9,8 +9,8 @@
  * Library dependencies.
  */
 
-var THREE = require('THREE');
-var Detector = require('Detector');
+var THREE = require('three');
+var Detector = require('detector');
 var simplexn = require('simplexn');
 
 var toString = {}.toString;
