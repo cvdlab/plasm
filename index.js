@@ -44,6 +44,11 @@ var Plasm = plasm.Viewer = function (container, inspector) {
     return new plasm.Viewer(container);
   }
 
+  if (typeof container === 'undefined') {
+    container = document.createElement('div');
+    container.setAttribute('id', 'root');
+    document.body.appendChild(container);
+  }
   if (typeof container === 'string') {
     container = document.getElementById(container);
   }
@@ -53,8 +58,6 @@ var Plasm = plasm.Viewer = function (container, inspector) {
   if (typeof inspector === 'string') {
     inspector = document.getElementById(inspector);
   }
-
-  $container = $(container);
 
   var scene = this.scene = new plasm.Scene();
 
@@ -90,9 +93,9 @@ var Plasm = plasm.Viewer = function (container, inspector) {
   }
 
   function resize () {
-    var width = $container.width();
-    var height = $container.height();
-    if (height === 0) { height = $(window).height(); }
+    var width = container.clientWidth;
+    var height = container.clientHeight;
+    if (height === 0) { height = document.documentElement.clientHeight; }
     
     camera.optics.aspect = width / height;
     camera.optics.updateProjectionMatrix();
