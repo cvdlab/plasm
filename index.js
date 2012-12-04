@@ -304,8 +304,6 @@ plasm.Controls.prototype.update = function () {
   return this;
 };
 
-} // end browser-only stuff
-
 /**
  * Materials
  */
