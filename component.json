@@ -11,6 +11,9 @@
   "scripts": [
     "index.js"
   ],
+  "styles": [
+    "style.css"
+  ],
   "dependencies": {
     "cvdlab/simplexn": "*",
     "cvdlab/three": "*",

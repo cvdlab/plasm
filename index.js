@@ -45,16 +45,13 @@ var Plasm = plasm.Viewer = function (container, inspector) {
     return new plasm.Viewer(container);
   }
 
-  if (typeof container === 'undefined') {
-    container = document.createElement('div');
-    container.setAttribute('id', 'plasm');
-    document.body.appendChild(container);
-  }
   if (typeof container === 'string') {
     container = document.getElementById(container);
   }
-  if (typeof container === 'undefined') {
-    container = window;
+  if (container === null || container === undefined) {
+    container = document.createElement('div');
+    container.setAttribute('id', 'plasm');
+    document.body.appendChild(container);
   }
   if (typeof inspector === 'string') {
     inspector = document.getElementById(inspector);
