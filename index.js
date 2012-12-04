@@ -47,7 +47,7 @@ var Plasm = plasm.Viewer = function (container, inspector) {
 
   if (typeof container === 'undefined') {
     container = document.createElement('div');
-    container.setAttribute('id', 'root');
+    container.setAttribute('id', 'plasm');
     document.body.appendChild(container);
   }
   if (typeof container === 'string') {
@@ -70,8 +70,8 @@ var Plasm = plasm.Viewer = function (container, inspector) {
   var light = this.light = new THREE.AmbientLight(0xeeeeee);
   scene.root.add(light);
 
-  var axes = this.axes();
-  axes.draw();
+  var axes = plasm.geometries.axes();
+  axes.draw(this);
 
   var engine = detector.webgl ? THREE.WebGLRenderer : THREE.CanvasRenderer;
   var renderer = this.renderer = new engine({ antialias: true });
@@ -175,7 +175,7 @@ plasm.Scene.prototype.getBoundingRadius = function () {
   var position;
   var maxPos;
 
-  THREE.SceneUtils.traverseHierarchy(this.root, function (obj) {
+  this.root.traverse(function (obj) {
     if (obj instanceof THREE.Object3D && obj.geometry && obj.geometry.vertices.length) {
       
       geometry = obj.geometry;
@@ -206,7 +206,7 @@ plasm.Scene.prototype.getCentroid = function () {
     , min: new THREE.Vector3() 
   };
   
-  THREE.SceneUtils.traverseHierarchy(this.root, function (obj) {
+  this.root.traverse(function (obj) {
     if (obj instanceof THREE.Object3D && obj.geometry && obj.geometry.vertices.length) {
 
       geometry = obj.geometry;
@@ -285,7 +285,7 @@ plasm.Controls = function (camera, scene, options) {
   var options = options || {};
   var controls;
 
-  controls = new THREE.Trackball(camera.optics, scene, options.container);
+  controls = new Trackball(camera.optics, scene, options.container);
   controls.rotateSpeed = options.rotateSpeed || 5.0;
   controls.zoomSpeed = options.zoomSpeed || 1.2;
   controls.panSpeed = options.panSpeed || 0.8;
@@ -402,9 +402,7 @@ plasm.Model = function (complex, viewer) {
 
     for (i_cell = 0; i_cell < n_cells; i_cell += 1) {
       v1 = pointset.get(cells[i_cell]);
-      geometry.vertices.push(new THREE.Vertex(
-        new THREE.Vector3(v1[0] || 0, v1[1] || 0, v1[2] || 0)
-      ));
+      geometry.vertices.push(new THREE.Vector3(v1[0] || 0, v1[1] || 0, v1[2] || 0));
     }
 
     material = new plasm.materials.PointMaterial();
@@ -418,12 +416,8 @@ plasm.Model = function (complex, viewer) {
     for (i_cell = 0; i_cell < n_cells; i_cell += 2) {
       v1 = pointset.get(cells[i_cell + 0]);
       v2 = pointset.get(cells[i_cell + 1]);
-      geometry.vertices.push(new THREE.Vertex(
-        new THREE.Vector3(v1[0], v1[1], v1[2])
-      ));
-      geometry.vertices.push(new THREE.Vertex(
-        new THREE.Vector3(v2[0], v2[1], v2[2])
-      ));
+      geometry.vertices.push(new THREE.Vector3(v1[0], v1[1], v1[2]));
+      geometry.vertices.push(new THREE.Vector3(v2[0], v2[1], v2[2]));
     }
 
     material = new plasm.materials.LineMaterial();
@@ -435,9 +429,7 @@ plasm.Model = function (complex, viewer) {
     n_cells = cells.length;
 
     pointset.forEach(function (v) {
-      geometry.vertices.push(new THREE.Vertex(
-        new THREE.Vector3(v[0] || 0, v[1] || 0, v[2] || 0)
-      ));
+      geometry.vertices.push(new THREE.Vector3(v[0] || 0, v[1] || 0, v[2] || 0));
     });
   
     for (i_cell = 0; i_cell < n_cells; i_cell += 3) {
@@ -955,13 +947,13 @@ plasm.Struct.fromJSON = function (json, viewer) {
  * @api public
  */
 
-plasm.Struct.prototype.draw = function () {
+plasm.Struct.prototype.draw = function (viewer) {
   this.models.forEach(function (model) {
-    model.draw();
+    model.draw(viewer);
   });
 
   this.structs.forEach(function (struct) {
-    struct.draw();
+    struct.draw(viewer);
   });
 
   return this;
