@@ -285,7 +285,7 @@ plasm.Controls = function (camera, scene, options) {
   var options = options || {};
   var controls;
 
-  controls = new THREE.EnhancedTrackballLightControls(camera.optics, scene, options.container);
+  controls = new THREE.Trackball(camera.optics, scene, options.container);
   controls.rotateSpeed = options.rotateSpeed || 5.0;
   controls.zoomSpeed = options.zoomSpeed || 1.2;
   controls.panSpeed = options.panSpeed || 0.8;
