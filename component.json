@@ -15,7 +15,8 @@
     "cvdlab/simplexn": "*",
     "cvdlab/three": "*",
     "cvdlab/three-detector": "*",
-    "cvdlab/three-stats": "*"
+    "cvdlab/three-stats": "*",
+    "cvdlab/three-trackball": "*"
   },
   "license": "MIT"
 }

@@ -12,6 +12,7 @@
 var THREE = require('three');
 var detector = require('three-detector');
 var Stats = require('three-stats');
+var Trackball = require('three-trackball');
 var simplexn = require('simplexn');
 
 var toString = {}.toString;
