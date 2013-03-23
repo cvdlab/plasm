@@ -2,6 +2,20 @@
 
 JavaScript Programming LAnguage for Solid Modeling
 
+## Installation
+
+### prerequisite
+
+- node.js
+- component
+
+### install
+
+Type in the terminal, in your project directory
+
+    $ component install cvdlab/plasm
+    $ component build
+
 ## Maintainers
 
 - Enrico Marino
