@@ -6,8 +6,8 @@ JavaScript Programming LAnguage for Solid Modeling
 
 ### prerequisite
 
-- node.js
-- component
+- [node.js](http://nodejs.org/)
+- [component](https://npmjs.org/package/component)
 
 ### install
 
