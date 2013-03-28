@@ -3,23 +3,16 @@
   "repo": "cvdlab/plasm",
   "description": "JavaScript Programming Language for Solid Modeling",
   "version": "0.3.0",
-  "keywords": [
-    "solid-modeling",
-    "3d",
-    "webgl"
-  ],
-  "scripts": [
-    "index.js"
-  ],
-  "styles": [
-    "style.css"
-  ],
+  "keywords": ["solid modeling", "3D", "WebGL", "CAD"],
+  "scripts": ["index.js"],
+  "styles": ["style.css"],
   "dependencies": {
     "cvdlab/simplexn": "*",
     "cvdlab/three": "*",
     "cvdlab/three-detector": "*",
     "cvdlab/three-stats": "*",
-    "cvdlab/three-trackball": "*"
+    "cvdlab/three-trackball": "*",
+    "enricomarino/css-reset": "*"
   },
   "license": "MIT"
 }
