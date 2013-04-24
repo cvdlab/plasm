@@ -452,9 +452,9 @@ plasm.Model = function (complex, viewer) {
   this.geometry = geometry;
   this.geometry.dynamic = true;
   this.material = material;
+  this.material.side = plasm.DRAW_SINGLE_SIDE ? THREE.FrontSide : THREE.DoubleSide;
   this.mesh = mesh;
   this.mesh.matrixAutoUpdate = true;
-  this.mesh.doubleSided = plasm.DRAW_SINGLE_SIDE ? true : false;
   this.viewer = viewer;
 };
 
