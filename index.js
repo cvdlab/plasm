@@ -327,14 +327,12 @@ plasm.materials.LineMaterial = function () {
 };
 
 plasm.materials.MeshMaterial = function () {
-  return new THREE.MeshFaceMaterial([ 
-    new THREE.MeshLambertMaterial({
+  return new THREE.MeshLambertMaterial({
       color: 0xD7D7D7,
       wireframe: detector !== undefined ? !detector.webgl : false,
       shading: THREE.FlatShading,
       vertexColors: THREE.FaceColors
-    })
-  ]);
+    });
 };
 
 plasm.materials.cloneColor = function (materialFrom, materialTo) {
