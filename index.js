@@ -72,7 +72,7 @@ var Plasm = plasm.Viewer = function (container, inspector) {
 
   var engine = detector.webgl ? THREE.WebGLRenderer : THREE.CanvasRenderer;
   var renderer = this.renderer = new engine({ antialias: true });
-  renderer.setClearColor(0xefefef, 1);
+  renderer.setClearColorHex(0xefefef, 1);
   resize();
 
   this.container = container;
