@@ -64,7 +64,7 @@ var Plasm = plasm.Viewer = function (container, inspector) {
 
   var controls = this.controls = new plasm.Controls(camera, scene, {container: container});
 
-  var light = this.light = new THREE.AmbientLight(0xeeeeee);
+  var light = this.light = new THREE.AmbientLight(0x303030);
   scene.root.add(light);
 
   var axes = plasm.geometries.axes();
