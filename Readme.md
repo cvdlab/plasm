@@ -18,8 +18,8 @@ Type in the terminal, in your project directory
 
 ## Maintainers
 
-- Enrico Marino
-- Federico Spini
+- [Enrico Marino](http://onirame.com)
+- [Federico Spini](http://federicospini.com)
 
 ## Contributors
 
@@ -29,7 +29,7 @@ Type in the terminal, in your project directory
 
 (The MIT License)
 
-Copyright (c) 2012 Enrico Marino and Federico Spini
+Copyright (c) 2013 Enrico Marino and Federico Spini
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
