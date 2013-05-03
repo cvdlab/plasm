@@ -16,6 +16,10 @@ Type in the terminal, in your project directory
     $ component install cvdlab/plasm
     $ component build
 
+### boilerplate
+
+see [plasm-boilerplate](https://github.com/cvdlab/plasm-boilerplate)
+
 ## Maintainers
 
 - [Enrico Marino](http://onirame.com)
