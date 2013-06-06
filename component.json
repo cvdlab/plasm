@@ -8,7 +8,7 @@
   "styles": ["style.css"],
   "dependencies": {
     "cvdlab/simplexn": "*",
-    "cvdlab/three": "=0.54.0",
+    "cvdlab/three": "<=0.54.0",
     "cvdlab/three-detector": "*",
     "cvdlab/three-stats": "*",
     "cvdlab/three-trackball": "*",
